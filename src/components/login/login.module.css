@@ -1,0 +1,11 @@
+body{font-family: 'Roboto', sans-serif;}
+.section{width: 100%;height: 100vh;display: flex; justify-content: center; align-items: center; background: url(../../../public/img/login_bg.jpg)no-repeat center;}
+
+.login_box{width: 400px;height: 250px; backdrop-filter: blur(10px); padding: 50px; box-sizing: border-box; border-radius: 15px; background: rgba(255, 255, 255, 0.2);}
+.wrap{width: 100%;height: 100%; display: flex; justify-content: center;flex-direction: column;}
+h2{font-size: 22px; font-weight:bold ;}
+p{font-size: 16px;}
+
+button{display: flex; justify-content: center; align-items: center; margin-top: 20px;  cursor: pointer; width: 100%;height: 40px; background: #fff; border: 1px solid #ddd; box-sizing: border-box; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
+button em{font-size: 16px; font-weight: 500;}
+button img{width: 30px;height: 30px; object-fit: cover;}
