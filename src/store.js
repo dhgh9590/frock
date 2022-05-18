@@ -2,7 +2,7 @@ import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 let loginCheck = createSlice({
     name: 'loginCheck',
-    initialState : false,
+    initialState : {name:'kim',age:0},
     reducers : {
       emailCheck(state){
         console.log(state)

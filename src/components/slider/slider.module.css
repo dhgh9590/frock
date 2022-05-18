@@ -1,0 +1,22 @@
+body{}
+.text_box{width: 100%; height: 100vh; position: absolute; top: 0;left: 0;}
+.title{width: 100%; position: absolute; top: 35%;left: 50%; transform: translateX(-50%); display: flex; justify-content: center; z-index: 1000;}
+.title p{ font-size: 120px; margin: 0px 35px; color: #fff; font-weight: 400;}
+.title p:nth-child(2){color: #191919;}
+.text{font-size: 15px; font-weight: 600; text-decoration: underline; color: #000; position: absolute; top: 55%;left: 50%; transform: translate(-50%,-50%); z-index: 1000;}
+
+.article{display: flex;}
+.article .left_box{width: 50%;height: 100vh; overflow: hidden;}
+.article .left_box img{width: 100%;height: 100%; object-fit: cover; }
+.article .left_box .left_box_img{width: 100%;height: 100%; background: url(../../../public/img/slider1_1.png)no-repeat center;  transition: all 1.2s;}
+.article .right_box{width: 50%;height: 100vh; background: #f5f5f5; position: relative; overflow: hidden;}
+.article .right_box em{font-size: 16px; font-weight: 600; color: #000; position: absolute; top: 180px; left: 10%; font-family: 'Roboto', sans-serif;}
+.article .right_box strong{font-size: 16px; font-weight: 600; color: #000; position: absolute; bottom: 25px; left: 10%; transform: translateY(50px); opacity: 0; transition: all 1.2s; transition-delay: 1.4s;}
+.article .right_box ul{}
+.article .right_box ul li{ opacity: 0; transition: all 1.2s;}
+.article .right_box ul li:nth-child(1){width: 470px;height: 430px; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-20%); transition-delay: 0.4s;}
+.article .right_box ul li:nth-child(2){width: 215px;height: 300px; position: absolute; top: 120px; left: 50%; transform: translate(40%,30%); transition-delay: 0.8s;}
+.article .right_box ul li:nth-child(3){width: 215px;height: 265px; position: absolute; top: 588px; left: 50%; transform: translate(-160%,30%); transition-delay: 1.2s;}
+.article .right_box ul li:nth-child(4){width: 280px;height: 400px; position: absolute; top: 490px; left: 50%; transform: translate(30%,30%); transition-delay: 1.6s;}
+
+.article .right_box ul li img{width: 100%;height: 100%; object-fit: cover;}

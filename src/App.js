@@ -1,4 +1,7 @@
 import './reset.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './App.css';
 import { Routes,Route,Link,useNavigate,Outlet } from 'react-router-dom';
 import Nav from './components/nav/nav';
@@ -6,9 +9,11 @@ import { useState } from 'react';
 import Cart from './router/cart/cart';
 import AuthService from './service/auth_service';
 import Login from './components/login/login';
+import Main from './router/main/main';
 
 
 function App() {
+  
 
   /* 로그인 기능 */
   const authService = new AuthService();
@@ -43,12 +48,11 @@ function App() {
     <div className="App">
       <Nav loginData={loginData} emailCheck={emailCheck} setEmailCheck={setEmailCheck} onLogin={onLogin}></Nav>
       <Routes>
-        <Route path="/" element={<div>메인페이지</div>}></Route>
+        <Route path="/" element={<Main></Main>}></Route>
         <Route path="/Costume" element={<div>Costume</div>}></Route>
         <Route path="/Shoes" element={<div>Shoes</div>}></Route>
         <Route path="/Accessories" element={<div>Accessories</div>}></Route>
         <Route path="/Perfume" element={<div>Perfume</div>}></Route>
-        <Route path="/Search" element={<div>Search</div>}></Route>
         <Route path="/Cart" element={emailCheck == true ? <Cart></Cart> : <Login onLogin={onLogin}></Login>}></Route>
       </Routes>
     </div>
