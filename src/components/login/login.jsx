@@ -4,12 +4,12 @@ import styles from './login.module.css';
 const Login = (props) => {
     return (
         <div>
-            <section className={styles.section}>
+            <section className={styles.section1}>
                 <div className={styles.login_box}>
                     <div className={styles.wrap}>
                         <h2>LOGIN</h2>
                         <p>Enter your credentials to acces your account.</p>
-                        <button onClick={props.onLogin}><img src={`img/google_icon.png`} alt="" /><em>Log In with Google</em></button>
+                        <button className={styles.loginBtt} onClick={props.onLogin}><img src={`img/google_icon.png`} alt="" /><em>Log In with Google</em></button>
                     </div>
                 </div>
             </section>

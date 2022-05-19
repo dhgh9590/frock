@@ -11,10 +11,17 @@ body{font-family: 'Playfair Display', serif; letter-spacing: -0.04em;}
 
 .swiper-pagination{content: ""; width: 27px; bottom: 4vh; left: 95vw; display: flex; flex-direction: column;justify-content: center; align-items: center;font-size: 16px;}
 
+.swiper-slide-prev .article .left_box .left_box_img{transform: translateY(100vh);}
+.swiper-slide-active .article .left_box .left_box_img{transform: translateY(0vh); }
+
 .swiper-slide-active .article .right_box strong{ transform: translateY(0px); opacity: 1; }
-.swiper-slide-active .article .left_box .left_box_img{ }
 .swiper-slide-active .article .right_box ul li{opacity: 1;}
 .swiper-slide-active .article .right_box ul li:nth-child(1){transform: translate(-50%,-50%);}
 .swiper-slide-active .article .right_box ul li:nth-child(2){ transform: translate(40%,0%);}
 .swiper-slide-active .article .right_box ul li:nth-child(3){transform: translate(-160%,0%);}
 .swiper-slide-active .article .right_box ul li:nth-child(4){ transform: translate(30%,0%); }
+
+
+@media (max-width : 760px){
+    .swiper-slide-active .article .right_box ul li:nth-child(4){transform: translate(-10%,0%); }
+}

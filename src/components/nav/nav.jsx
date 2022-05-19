@@ -8,6 +8,8 @@ import { faBagShopping ,faMagnifyingGlass} from "@fortawesome/free-solid-svg-ico
 
 
 const Nav = (props) => {
+    
+
 
     let menu = useRef(null)
 
@@ -24,6 +26,8 @@ const Nav = (props) => {
         localStorage.removeItem("emailCheck");
         props.setEmailCheck(false);
     }
+
+
 
     return (
         <div>

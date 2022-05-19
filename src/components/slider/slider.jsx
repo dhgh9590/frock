@@ -8,7 +8,7 @@ export default () => {
   return (
     <Swiper
         loop={true}
-        autoplay={{delay: 5000,disableOnInteraction: true,}}
+        autoplay={{delay: 4000,disableOnInteraction: true,}}
         pagination={{type: "fraction",}}
         navigation={true}
         modules={[Pagination, Navigation, Autoplay]}
@@ -34,7 +34,41 @@ export default () => {
             </article>
         </SwiperSlide>
         <SwiperSlide>
-            <article className={`${styles.article1} ${styles.article} article`}>
+            <article className={`${styles.article2} ${styles.article} article`}>
+                <div className={`${styles.left_box} left_box`}>
+                    <div className={`${styles.left_box_img} left_box_img`}></div>
+                </div>
+                <div className={`${styles.right_box} right_box`}>
+                    <em>SPRING / SUMMER 2022</em>
+                    <strong>Women’s Collection</strong>
+                    <ul>
+                        <li><img src="/img/slider1_2.png" alt="" /></li>
+                        <li><img src="/img/slider1_3.png" alt="" /></li>
+                        <li><img src="/img/slider1_4.png" alt="" /></li>
+                        <li><img src="/img/slider1_5.png" alt="" /></li>
+                    </ul>
+                </div>
+            </article>
+        </SwiperSlide>
+        <SwiperSlide>
+            <article className={`${styles.article3} ${styles.article} article`}>
+                <div className={`${styles.left_box} left_box`}>
+                    <div className={`${styles.left_box_img} left_box_img`}></div>
+                </div>
+                <div className={`${styles.right_box} right_box`}>
+                    <em>SPRING / SUMMER 2022</em>
+                    <strong>Women’s Collection</strong>
+                    <ul>
+                        <li><img src="/img/slider1_2.png" alt="" /></li>
+                        <li><img src="/img/slider1_3.png" alt="" /></li>
+                        <li><img src="/img/slider1_4.png" alt="" /></li>
+                        <li><img src="/img/slider1_5.png" alt="" /></li>
+                    </ul>
+                </div>
+            </article>
+        </SwiperSlide>
+        <SwiperSlide>
+            <article className={`${styles.article4} ${styles.article} article`}>
                 <div className={`${styles.left_box} left_box`}>
                     <div className={`${styles.left_box_img} left_box_img`}></div>
                 </div>
