@@ -45,8 +45,12 @@ function App() {
   }
 
   useEffect(()=>{
+    loginCheck();
     bestData(`https://dhgh9590.github.io/forck_json/main/best1.json`);
     latestData();
+    if(!localStorage.getItem("shoppingBag")){
+      localStorage.setItem("shoppingBag",JSON.stringify([]));
+    }
   },[])
 
 
@@ -91,7 +95,7 @@ function App() {
         <Route path="/Accessories" element={<div>Accessories</div>}></Route>
         <Route path="/Perfume" element={<div>Perfume</div>}></Route>
         <Route path="/Cart" element={emailCheck == true ? <Cart></Cart> : <Login onLogin={onLogin}></Login>}></Route>
-        <Route path="/Detail/:id" element={<Detail best={best}></Detail>}></Route>
+        <Route path="/Detail/:id" element={<Detail best={best} onLogin={onLogin} emailCheck={emailCheck}></Detail>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

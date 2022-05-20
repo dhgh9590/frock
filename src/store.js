@@ -7,6 +7,7 @@ let detailData = createSlice({
     reducers : {
       addDetailData(state,action){
         state.data = action.payload
+        localStorage.setItem("itemData",JSON.stringify(action.payload));
       }
     }
   })
