@@ -12,30 +12,41 @@ import Login from './components/login/login';
 import Main from './router/main/main';
 import Costume from './router/costume/costume';
 import Detail from './router/detail/detail';
+import { useDispatch } from 'react-redux';
+import { addLatestData } from './store';
+import Footer from './components/footer/footer';
 
 
 function App() {
-  let [best,setBest] = useState();
+  let [best,setBest] = useState([]);//best상품 ajax요청한 값 담는 state
+  let [visible,setVisible] = useState(0);//best상품 버튼 삭제 state
+  let dispatch = useDispatch();
+  
 
-  function bestData(){
-    fetch(`https://dhgh9590.github.io/forck_json/main/best1.json`)
+  //best 상품 ajax요청
+  function bestData(url){
+    fetch(url)
       .then(res => res.json())
       .then(data => {
-        setBest(data);
+        setTimeout(()=>{
+          let newBest = [...best,...data];
+          setBest(newBest);
+        },500)
       })
   }
 
-  function bestData2(){
-    fetch(`https://dhgh9590.github.io/forck_json/main/best2.json`)
+  //latest 상품 ajax요청
+  function latestData(){
+    fetch(`https://dhgh9590.github.io/forck_json/main/latest.json`)
       .then(res => res.json())
       .then(data => {
-          let newBest = [...best,...data];
-          setBest(newBest);
+        dispatch(addLatestData(data))
       })
   }
 
   useEffect(()=>{
-    bestData();
+    bestData(`https://dhgh9590.github.io/forck_json/main/best1.json`);
+    latestData();
   },[])
 
 
@@ -74,14 +85,15 @@ function App() {
     <div className="App">
       <Nav loginData={loginData} emailCheck={emailCheck} setEmailCheck={setEmailCheck} onLogin={onLogin}></Nav>
       <Routes>
-        <Route path="/" element={<Main best={best} bestData2={bestData2} setBest={setBest}></Main>}></Route>
+        <Route path="/" element={<Main best={best} bestData={bestData} setBest={setBest} visible={visible} setVisible={setVisible}></Main>}></Route>
         <Route path="/Costume" element={<Costume></Costume>}></Route>
         <Route path="/Shoes" element={<div>Shoes</div>}></Route>
         <Route path="/Accessories" element={<div>Accessories</div>}></Route>
         <Route path="/Perfume" element={<div>Perfume</div>}></Route>
         <Route path="/Cart" element={emailCheck == true ? <Cart></Cart> : <Login onLogin={onLogin}></Login>}></Route>
-        <Route path="/Detail/:id" element={<Detail></Detail>}></Route>
+        <Route path="/Detail/:id" element={<Detail best={best}></Detail>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

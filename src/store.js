@@ -1,18 +1,32 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
-let loginCheck = createSlice({
-    name: 'loginCheck',
-    initialState : {name:'kim',age:0},
+//상품 상세페이지에 데이터 전달
+let detailData = createSlice({
+    name: 'detailData',
+    initialState : {},
     reducers : {
-      emailCheck(state){
-        console.log(state)
+      addDetailData(state,action){
+        state.data = action.payload
       }
     }
   })
-export let {emailCheck} = loginCheck.actions;
+export let {addDetailData} = detailData.actions;
+
+//latest 데이터 값 받기
+let latestData = createSlice({
+  name : 'latestData',
+  initialState : {},
+  reducers : {
+    addLatestData(state,action){
+      state.data = action.payload
+    }
+  }
+})
+export let {addLatestData} = latestData.actions;
 
 export default configureStore({
   reducer: {
-    loginCheck : loginCheck.reducer
+    detailData : detailData.reducer,
+    latestData : latestData.reducer
    }
 }) 

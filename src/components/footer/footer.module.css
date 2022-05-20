@@ -1,0 +1,25 @@
+.footer{width: 100%;height: 150px;background: #292929; }
+.footer .container{max-width: 1440px; height: 100%; margin: 0 auto; display: flex; justify-content: center; align-items: center; align-items: center;}
+.footer .container > div{width: 225px;}
+.copy{}
+.copy em{font-size: 18px;color: #f0f0f0;}
+
+.sns{margin: 0 100px;}
+.sns ul{display: grid; grid-template-columns: 35px 35px 35px 35px; grid-gap: 0 10px; justify-content: center;}
+.sns ul li{width: 35px;height: 35px; margin: 0 5px; border-radius: 50%; background: #575757;}
+.sns ul li a{width: 100%;height: 100%; display: block;}
+
+.telephone{}
+.telephone em{font-size: 18px;color: #f0f0f0;}
+.telephone .tel_icon{font-size: 18px;color: #f0f0f0; margin-right: 5px;}
+
+@media (max-width : 1023px){
+    .footer .container{justify-content: space-between; }
+    .footer .container > div{width: 100%; padding: 0 20px; box-sizing: border-box;}
+
+    .sns{margin: 0 0px;}
+    .sns ul{grid-template-columns: 35px 35px; grid-gap: 10px;}
+
+    .telephone em{font-size: 16px;}
+
+}

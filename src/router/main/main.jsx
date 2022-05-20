@@ -4,6 +4,7 @@ import styles from './main.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight} from "@fortawesome/free-solid-svg-icons";
 import Best from '../../components/best/best';
+import Latest from '../../components/latest/latest';
 
 const Main = (props) => {
 
@@ -27,13 +28,14 @@ const Main = (props) => {
                         <img src="/img/section1_2.png" alt="" />
                     </div>
                     <div className={styles.text_box}>
-                        <h3>Accessories</h3>
+                        <h3>Perfume</h3>
                         <p>TIMELESS EVERYDAY OBJECTS</p>
                         <button>View more<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} /></button>
                     </div>
                 </div>
             </section>
-            <Best best={props.best} bestData2={props.bestData2} setBest={props.setBest}></Best>
+            <Best best={props.best} bestData={props.bestData} setBest={props.setBest} visible={props.visible} setVisible={props.setVisible}></Best>
+            <Latest></Latest>
         </div>
     );
 };

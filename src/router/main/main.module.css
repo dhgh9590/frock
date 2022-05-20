@@ -1,6 +1,6 @@
 .section1{max-width: 1440px; margin: 0 auto; display: flex; justify-content: center;  padding: 20px; box-sizing: border-box;}
 .section1 .box{width: 690px;height: 250px; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; overflow: hidden; box-sizing: border-box;} 
-.section1 .box .text_box{ margin-top: 20px;}
+.section1 .box .text_box{ margin-top: 20px; display: flex; flex-direction: column;}
 .section1 .box .text_box h3{font-size: 40px; font-weight: 500; line-height: 40px; color: #191919;}
 .section1 .box .text_box p{font-size: 16px; font-weight: 400; color: #191919;}
 .section1 .box .text_box button{width: 180px;height: 40px;margin-top: 20px; cursor: pointer; font-size: 16px; transition: all 0.4s; box-sizing: border-box; font-family: 'Playfair Display', serif;}
@@ -12,7 +12,8 @@
 
 .section1 .left_box .img_box img{width: 272px; height: 245px; object-fit: cover;}
 
-.section1 .right_box{ background: #ffd4d4;}
+.section1 .right_box{ background: #ffd4d4; }
+.section1 .right_box .text_box{ align-items: flex-end;}
 .section1 .right_box .text_box h3{color: #fff;}
 .section1 .right_box .text_box p{color: #fff;}
 .section1 .right_box .text_box button{background: #fff; color: #191919; border: 1px solid #fff; }

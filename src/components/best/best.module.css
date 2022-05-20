@@ -4,6 +4,9 @@
 .title h2::before{content: ""; width: 40px;height: 2px; background: #000; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);}
 .title h2::after{content: ""; width: 40px;height: 2px; background: #000; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);}
 
+.sort{}
+.sort button{padding: 5px 15px; margin-right: 10px; border: 1px solid #000; background: #fff; transition: all 0.4s; box-sizing: border-box; cursor: pointer; font-family: 'Roboto', sans-serif; text-align: center;}
+.sort button.active{background: #191919; color: #fff; border: 1px solid #fff;}
 .item_wrap{}
 .item_wrap ul{display: grid; grid-template-columns: 335px 335px 335px 335px; grid-gap: 0 20px; justify-content: center;}
 .item_wrap ul li{}

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addDetailData } from '../../store';
 import styles from './best.module.css';
 
 
 const Best = (props) => {
 
     let navigate = useNavigate();
-    let [visible,setVisible] = useState(0);
+    let [sort,setSort] = useState();
+    let [price,setPrice] = useState(0);
+    let dispatch = useDispatch();
 
     function nameFilter(){
         let newBest = [...props.best]
@@ -24,13 +28,22 @@ const Best = (props) => {
         props.setBest(newBest);
     }
 
-    function priceFilter(){
+    function lowPriceFilter(){
         let newBest = [...props.best];
         newBest.sort(function(a,b){
             return a.price - b.price;
         })
         props.setBest(newBest);
     }
+
+    function highPriceFilter(){
+        let newBest = [...props.best];
+        newBest.sort(function(a,b){
+            return b.price - a.price;
+        })
+        props.setBest(newBest);
+    }
+    
     
     return (
         <div>
@@ -38,14 +51,20 @@ const Best = (props) => {
                 <div className={styles.title}>
                     <h2>BEST PRODUCT</h2>
                 </div>
-                <button onClick={nameFilter}>이름순 정렬</button>
-                <button onClick={priceFilter}>가격순 정렬</button>
+                <div className={styles.sort}>
+                    <button onClick={()=>{nameFilter();setSort(0);setPrice(0);}} className={sort == 0 ? `${styles.active}` : null}>Name Sort</button>
+                    {
+                        price == 0 ?
+                        <button onClick={()=>{lowPriceFilter();setSort(1);setPrice(1);}} className={sort == 1 ? `${styles.active}` : null}>Low Price Sort</button>
+                        :<button onClick={()=>{highPriceFilter();setSort(1);setPrice(0);}} className={sort == 1 ? `${styles.active}` : null}>High Price Sort</button>
+                    }
+                </div>
                 <div className={styles.item_wrap}>
                     <ul>
                         {
                             props.best && props.best.map(function(item,index){
                                 return(
-                                    <li key={item.id} onClick={()=>{navigate(`/Detail/${props.best[index].id}`)}}>
+                                    <li key={item.id} onClick={()=>{navigate(`/Detail/${index}`); dispatch(addDetailData(item))}}>
                                         <div className={styles.item}>
                                             <div className={styles.item_img}>
                                                 <img src={props.best[index].url} alt="" />
@@ -60,9 +79,14 @@ const Best = (props) => {
                         }
                     </ul>
                 </div>
-                <div className={styles.btt_wrap}>
-                    <button className={`${styles.more_btt} ${visible == 1 ? styles.visible : null}`} onClick={()=>{props.bestData2();setVisible(1)}}>View more</button>
-                </div>
+                {
+                    props.visible == 0 ?
+                    <div className={styles.btt_wrap}>
+                        <button className={`${styles.more_btt} ${props.visible == 1 ? styles.visible : null}`} onClick={()=>{props.bestData(`https://dhgh9590.github.io/forck_json/main/best2.json`);props.setVisible(1)}}>View more</button>
+                    </div>
+                    :null
+                }
+
             </section>
         </div>
     );
