@@ -1,5 +1,66 @@
 body{}
-.section1{width: 100%;height: 100vh; background: #ccc; display: flex; justify-content: center; align-items: center; padding-top: 70px;}
-.section1 ul{display: flex; flex-direction: column;}
-.section1 ul li{margin: 0 20px;}
-.section1 ul li em{font-size: 20px;}
+.section1{width: 100%;min-height: 100vh; height: 100%; padding-top: 70px; background: #f7fbff; box-sizing: border-box;}
+.section1 .container{max-width: 1200px; margin: 0 auto; padding: 20px; box-sizing: border-box; display: flex; grid-gap:0 20px;}
+.cart_list{width: 70%; height: 100%; background: #fff; border-radius: 20px; padding: 20px; box-sizing: border-box; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.cart_list h2{font-size: 20px; font-weight: 600;}
+
+.cart_list > ul{margin-top: 20px;}
+.cart_list ul li{}
+.cart_list ul li .item{border-top: 1px solid #ccc; padding: 10px 0; box-sizing: border-box;  display: flex;}
+.cart_list ul li .item .img_box{width: 250px;height: 150px; background: #555; border-radius: 10px; cursor: pointer; position: relative;}
+.cart_list ul li .item .img_box .navi{width: 100%;height: 100%; display: flex; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(5px); opacity: 0; position: absolute; top: 0;left: 0; padding: 10px; box-sizing: border-box; visibility: hidden; justify-content: center; align-items: center; transition: all 0.4s;}
+.cart_list ul li .item .img_box .navi em{font-size: 16px; font-weight: 600; text-align: center;}
+.cart_list ul li .item .img_box.active .navi{ visibility: visible; opacity: 1;}
+.cart_list ul li .item .img_box img{width: 100%;height: 100%;object-fit: cover;}
+.cart_list ul li .item .text_box{width: 100%;display: flex; flex-direction: column; justify-content: center; margin-left: 10px;}
+
+.text_box .filter{ display: flex; justify-content: space-between;}
+.text_box .filter em{font-size: 16px; }
+.text_box .filter strong{font-size: 18px;}
+.text_box h4{font-size: 18px; margin-bottom: 20px;}
+
+.change{}
+.change .text{display: inline-flex; justify-content: space-between; align-items: center;  border: 1px solid #ccc; border-radius: 5px; padding: 0 10px; }
+.change .text em{font-size: 16px; margin-right: 20px; padding: 3px 0;}
+.change .text .icon_box{display: flex;flex-direction: column;}
+.change .text .icon_box .icon{cursor: pointer;}
+
+.btt{display: flex; justify-content: space-between;}
+.btt > ul{display: flex;}
+.btt > ul > li{margin-right: 5px; position: relative;}
+.btt > ul > li:nth-child(1),
+.btt > ul > li:nth-child(2){cursor: pointer;}
+.btt button{font-size: 16px; background: transparent; cursor: pointer;}
+.btt button .icon{margin-right: 5px;}
+
+.btt > ul > li ul{text-align: center; position: absolute; top: 100%;left: 0; width: 100%; display: none;}
+.btt > ul > li.active ul{display: block;}
+.btt > ul > li ul li{border: 1px solid #ccc; background: #fff; margin-top: -1px;}
+
+.cart_all{width: 30%; height: 100%; background: #fff; border-radius: 20px; padding: 20px; box-sizing: border-box; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+.cart_all strong{font-size: 18px;}
+.cart_all .text{display: flex; justify-content: space-between;}
+.cart_all .text em{font-size: 20px;}
+.cart_all ul{}
+.cart_all ul li{display: flex; justify-content: space-between;}
+.cart_all ul li p{}
+.cart_all button{padding: 10px 0; margin-top: 20px; width: 100%; border-radius: 5px; background: #25AAE1; color: #fff; font-size: 16px; cursor: pointer;}
+
+.number{display: flex; align-items: center; }
+.num_icon{ display: flex; flex-direction: column; margin-left: 10px;}
+.num_icon .icon{font-size: 14px; cursor: pointer; font-size: 12px;}
+
+.section1 form{}
+.section1 form input{display: none;}
+
+@media (max-width : 1023px){
+    .section1 .container{padding: 20px; grid-gap:20px 0; flex-direction: column; align-items: center;}
+    .cart_list{width: 100%;}
+    .cart_all{width: 100%;}
+}
+
+@media (max-width : 600px){
+    .change .text{ padding: 0 7px; }
+    .change .text em{font-size: 14px; margin-right: 20px; padding: 3px 0;}
+    .cart_list ul li .item .img_box{width: 180px;height: 150px;  border-radius: 10px; }
+}

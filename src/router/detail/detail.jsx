@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './detail.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown} from "@fortawesome/free-solid-svg-icons";
+import {faAngleUp , faAngleDown} from "@fortawesome/free-solid-svg-icons";
 
 const Detail = (props) => {
     let {id} = useParams();
@@ -27,10 +27,21 @@ const Detail = (props) => {
         setColorText(e.currentTarget.textContent)
     }
 
+    /* 수량 변경 */
+    let [count,setCount] = useState(1)
+    function countUp(){
+        setCount(count += 1)
+    };
+    function countDown(){
+        if(count > 1){
+            setCount(count -= 1)
+        }
+    };
+
     function addLocalStorage(){
         let getItem = localStorage.getItem("shoppingBag");
         getItem = JSON.parse(getItem);
-        getItem.push({id:data.id,title:data.title,filter:data.filter,price:data.price,size:sizeText,color:colorText});
+        getItem.push({id:data.id,title:data.title,filter:data.filter,price:data.price,sizeText:sizeText,colorText:colorText,count:count,url:data.url,color:data.color,size:data.size});
         const newArray = getItem.reduce(function(acc, current) {
             if (acc.findIndex(({ id }) => id === current.id) === -1) {
               acc.push(current);
@@ -98,6 +109,19 @@ const Detail = (props) => {
                             </div>
                             : null
                         }
+                            <div className={`${styles.count}`}>
+                                <div className={styles.content}>
+                                    <p>count</p>
+                                    <div className={styles.count_box}>
+                                        <p>{count}</p>
+                                        <div className={styles.icon_box}>
+                                            <FontAwesomeIcon icon={faAngleUp} className={styles.icon} onClick={()=>{countUp()}}/>
+                                            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} onClick={()=>{countDown()}}/>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         <strong>${data.price}</strong>
                         <div className={styles.btt}>
                             <button className={styles.btt_bag} onClick={(e)=>{e.preventDefault(); props.emailCheck == false ? props.onLogin() : addLocalStorage();}}>쇼핑백에 추가</button>

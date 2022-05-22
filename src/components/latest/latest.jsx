@@ -29,7 +29,7 @@ const Latest = () => {
                                             {
                                                 data[index] && data[index].map(function(item,index){
                                                     return(
-                                                        <li key={item.id} onClick={()=>{navigate(`/Detail/${index}`); dispatch(addDetailData(item))}}>
+                                                        <li key={item.id} onClick={()=>{navigate(`/Detail/${index}`); dispatch(addDetailData(item));}}>
                                                             <div className={styles.item}>
                                                                 <div className={styles.item_img}>
                                                                     <img src={item.url} alt="" />
