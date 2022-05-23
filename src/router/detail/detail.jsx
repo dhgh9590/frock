@@ -12,6 +12,7 @@ const Detail = (props) => {
     let [itemData,setItemDate] = useState();
     let data = localStorage.getItem("itemData");
     data = JSON.parse(data);
+    let [popup,setPopup] = useState(0);
 
     /* 사이즈 변경 */
     let [size,setSize] = useState(0);
@@ -54,10 +55,13 @@ const Detail = (props) => {
 
     useEffect(()=>{
 
-        if(data.size && data.color){
+        if(data.size){
             setSizeText(data.size[0])
-            setColorText(data.color[0])
+            
         };
+        if(data.color){
+            setColorText(data.color[0])
+        }
         window.scrollTo({ top: 0});
     },[])
 
@@ -124,14 +128,19 @@ const Detail = (props) => {
                             </div>
                         <strong>${data.price}</strong>
                         <div className={styles.btt}>
-                            <button className={styles.btt_bag} onClick={(e)=>{e.preventDefault(); props.emailCheck == false ? props.onLogin() : addLocalStorage();}}>쇼핑백에 추가</button>
+                            <button className={styles.btt_bag} onClick={(e)=>{e.preventDefault(); props.emailCheck == false ? props.onLogin() : addLocalStorage(); props.emailCheck == true ? setPopup(1) : setPopup(0)}}>쇼핑백에 추가</button>
                             <form action="http://dhgh9590.dothome.co.kr/test/form.php" method='post'>
                                 <input className='ir_su' type="text" name="filter" defaultValue={data.filter}/>
                                 <input className='ir_su' type="text" name="title" defaultValue={data.title} />
                                 <input className='ir_su' type="text" name="sizeText" defaultValue={sizeText} />
                                 <input className='ir_su' type="text" name="colorText" defaultValue={colorText} />
                                 <input className='ir_su' type="text" name="price" defaultValue={data.price} />
-                                <button className={styles.btt_purchase}>구매하기</button>
+                                {
+                                    props.emailCheck == false ?
+                                    <button className={styles.btt_purchase} onClick={(e)=>{ e.preventDefault();props.onLogin()}}>구매하기</button>
+                                    : <button className={styles.btt_purchase}>구매하기</button>
+                                }
+                                
                             </form>
                         </div>
                         <p>본 제품은 예약구매로 진행되며, 배송 기간이 약 2주에서 최대 
@@ -140,6 +149,18 @@ const Detail = (props) => {
                     </div>
                 </div>
             </section>
+            {
+                popup == 1 ?
+                <article className={styles.article}>
+                    <p>쇼핑백에 상품을 담았습니다.</p>
+                    <div className={styles.btt}>
+                        <button onClick={()=>{navigate('/Cart')}}>쇼핑백으로 이동</button>
+                        <button onClick={()=>{setPopup(0)}}>닫기</button>
+                    </div>
+                </article>
+                :null
+            }
+
         </div>
     );
 };

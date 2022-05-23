@@ -13,10 +13,10 @@ const Footer = () => {
                     </div>
                     <div className={styles.sns}>
                         <ul>
-                            <li><a href="#" target='blink'></a></li>
-                            <li><a href="#" target='blink'></a></li>
-                            <li><a href="#" target='blink'></a></li>
-                            <li><a href="#" target='blink'></a></li>
+                            <li><a href="#" target='blink'><img src="/img/icon1.png" alt="" /></a></li>
+                            <li><a href="#" target='blink'><img src="/img/icon2.png" alt="" /></a></li>
+                            <li><a href="#" target='blink'><img src="/img/icon3.png" alt="" /></a></li>
+                            <li><a href="#" target='blink'><img src="/img/icon4.png" alt="" /></a></li>
                         </ul>
                     </div>
                     <div className={styles.telephone}>

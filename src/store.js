@@ -25,6 +25,7 @@ let latestData = createSlice({
 })
 export let {addLatestData} = latestData.actions;
 
+
 export default configureStore({
   reducer: {
     detailData : detailData.reducer,

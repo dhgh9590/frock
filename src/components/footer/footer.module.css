@@ -7,7 +7,12 @@
 .sns{margin: 0 100px;}
 .sns ul{display: grid; grid-template-columns: 35px 35px 35px 35px; grid-gap: 0 10px; justify-content: center;}
 .sns ul li{width: 35px;height: 35px; margin: 0 5px; border-radius: 50%; background: #575757;}
-.sns ul li a{width: 100%;height: 100%; display: block;}
+.sns ul li a{width: 100%;height: 100%; display: block; position: relative;}
+.sns ul li a img{object-fit: cover; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-50%);}
+.sns ul li:nth-child(1) a img{width: 19px;height: 16px;}
+.sns ul li:nth-child(2) a img{width: 18px;height: 18px;}
+.sns ul li:nth-child(3) a img{width: 11px;height: 21px;}
+.sns ul li:nth-child(4) a img{width: 20px;height: 14px;}
 
 .telephone{}
 .telephone em{font-size: 18px;color: #f0f0f0;}

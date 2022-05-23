@@ -19,7 +19,7 @@ const Cart = () => {
     let [sizeChange,setSizeChange] = useState(); //사이즈 변경값 저장
     let [color,setColor] = useState();//컬러 ui 변경
     let [colorChange,setColorChange] = useState(); //컬러 변경값 저장
-    let [imgOver,setImgOver] = useState(0);
+    let [imgOver,setImgOver] = useState();
     
 
     /* 아이템 삭제 함수 */
@@ -61,6 +61,7 @@ const Cart = () => {
         window.location.reload();
     }
 
+    
     /* 사이즈 변경 */
     function changeSize(e,item,targetId){
         setSizeChange(item.sizeText = e);

@@ -51,6 +51,7 @@ function App() {
     if(!localStorage.getItem("shoppingBag")){
       localStorage.setItem("shoppingBag",JSON.stringify([]));
     }
+    localStorage.setItem("pageNum",0);
   },[])
 
 
