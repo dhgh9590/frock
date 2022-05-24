@@ -11,6 +11,7 @@ export default () => {
         autoplay={{delay: 4000,disableOnInteraction: true,}}
         pagination={{type: "fraction",}}
         navigation={true}
+        allowTouchMove={false}
         modules={[Pagination, Navigation, Autoplay]}
         speed = {2000}
         direction={"vertical"}
@@ -25,10 +26,10 @@ export default () => {
                     <em>SPRING / SUMMER 2022</em>
                     <strong>Women’s Collection</strong>
                     <ul>
-                        <li><img src="/img/slider1_2.png" alt="" /></li>
-                        <li><img src="/img/slider1_3.png" alt="" /></li>
-                        <li><img src="/img/slider1_4.png" alt="" /></li>
-                        <li><img src="/img/slider1_5.png" alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider1_2.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider1_3.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider1_4.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider1_5.png`} alt="" /></li>
                     </ul>
                 </div>
             </article>
@@ -42,10 +43,10 @@ export default () => {
                     <em>SPRING / SUMMER 2022</em>
                     <strong>Women’s Collection</strong>
                     <ul>
-                        <li><img src="/img/slider1_2.png" alt="" /></li>
-                        <li><img src="/img/slider1_3.png" alt="" /></li>
-                        <li><img src="/img/slider1_4.png" alt="" /></li>
-                        <li><img src="/img/slider1_5.png" alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider2_2.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider2_3.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider2_4.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider2_5.png`} alt="" /></li>
                     </ul>
                 </div>
             </article>
@@ -59,27 +60,10 @@ export default () => {
                     <em>SPRING / SUMMER 2022</em>
                     <strong>Women’s Collection</strong>
                     <ul>
-                        <li><img src="/img/slider1_2.png" alt="" /></li>
-                        <li><img src="/img/slider1_3.png" alt="" /></li>
-                        <li><img src="/img/slider1_4.png" alt="" /></li>
-                        <li><img src="/img/slider1_5.png" alt="" /></li>
-                    </ul>
-                </div>
-            </article>
-        </SwiperSlide>
-        <SwiperSlide>
-            <article className={`${styles.article4} ${styles.article} article`}>
-                <div className={`${styles.left_box} left_box`}>
-                    <div className={`${styles.left_box_img} left_box_img`}></div>
-                </div>
-                <div className={`${styles.right_box} right_box`}>
-                    <em>SPRING / SUMMER 2022</em>
-                    <strong>Women’s Collection</strong>
-                    <ul>
-                        <li><img src="/img/slider1_2.png" alt="" /></li>
-                        <li><img src="/img/slider1_3.png" alt="" /></li>
-                        <li><img src="/img/slider1_4.png" alt="" /></li>
-                        <li><img src="/img/slider1_5.png" alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider3_2.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider3_3.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider3_4.png`} alt="" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/img/slider3_5.png`} alt="" /></li>
                     </ul>
                 </div>
             </article>

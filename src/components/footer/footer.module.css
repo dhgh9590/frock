@@ -28,3 +28,9 @@
     .telephone em{font-size: 16px;}
 
 }
+
+@media (max-width : 500px){
+    .sns{margin: 0 0px;}
+    .copy em{font-size: 14px;}
+    .telephone em{font-size: 14px;}
+}

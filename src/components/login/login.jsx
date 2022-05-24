@@ -9,7 +9,7 @@ const Login = (props) => {
                     <div className={styles.wrap}>
                         <h2>LOGIN</h2>
                         <p>Enter your credentials to acces your account.</p>
-                        <button className={styles.loginBtt} onClick={props.onLogin}><img src={`img/google_icon.png`} alt="" /><em>Log In with Google</em></button>
+                        <button className={styles.loginBtt} onClick={props.onLogin}><img src={`${process.env.PUBLIC_URL}/img/google_icon.png`} alt="" /><em>Log In with Google</em></button>
                     </div>
                 </div>
             </section>

@@ -9,9 +9,8 @@ body{}
 .article .left_box{width: 50%;height: 100vh; overflow: hidden;}
 .article .left_box img{width: 100%;height: 100%; object-fit: cover;    }
 .article .left_box .left_box_img{width: 100%;height: 100%; background-image: url(../../../public/img/slider1_1.png); background-position: center; background-color: #0005;  background-blend-mode: darken;  transform: translateY(-7vh);transition: all 2s;}
-.article2 .left_box .left_box_img{background-image: url(../../../public/img/test1.jpg);}
-.article3 .left_box .left_box_img{background-image: url(../../../public/img/test2.jpg);}
-.article4 .left_box .left_box_img{background-image: url(../../../public/img/test3.jpg);}
+.article2 .left_box .left_box_img{background-image: url(../../../public/img/slider2_1.png);}
+.article3 .left_box .left_box_img{background-image: url(../../../public/img/slider3_1.png);}
 
 .article .right_box{width: 50%;height: 100vh; background: #f5f5f5; position: relative;}
 .article .right_box em{font-size: 16px; font-weight: 600; color: #000; position: absolute; top: 180px; left: 10%; font-family: 'Roboto', sans-serif;}

@@ -58,7 +58,6 @@ const Cart = () => {
         getItem.push(item)
         setData(getItem.sort((a,b)=>{return a.id - b.id}))
         localStorage.setItem("shoppingBag",JSON.stringify(data));
-        window.location.reload();
     }
 
     

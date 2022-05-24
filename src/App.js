@@ -15,6 +15,9 @@ import Detail from './router/detail/detail';
 import { useDispatch } from 'react-redux';
 import { addLatestData } from './store';
 import Footer from './components/footer/footer';
+import Shoes from './router/shoes/shoes';
+import Accessories from './router/accessories/accessories';
+import Perfume from './router/perfume/perfume';
 
 
 function App() {
@@ -92,9 +95,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main best={best} bestData={bestData} setBest={setBest} visible={visible} setVisible={setVisible}></Main>}></Route>
         <Route path="/Costume" element={<Costume></Costume>}></Route>
-        <Route path="/Shoes" element={<div>Shoes</div>}></Route>
-        <Route path="/Accessories" element={<div>Accessories</div>}></Route>
-        <Route path="/Perfume" element={<div>Perfume</div>}></Route>
+        <Route path="/Shoes" element={<Shoes></Shoes>}></Route>
+        <Route path="/Accessories" element={<Accessories></Accessories>}></Route>
+        <Route path="/Perfume" element={<Perfume></Perfume>}></Route>
         <Route path="/Cart" element={emailCheck == true ? <Cart></Cart> : <Login onLogin={onLogin}></Login>}></Route>
         <Route path="/Detail/:id" element={<Detail best={best} onLogin={onLogin} emailCheck={emailCheck}></Detail>}></Route>
       </Routes>
