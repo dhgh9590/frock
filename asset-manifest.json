@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frock/static/css/main.f1c1c679.css",
-    "main.js": "/frock/static/js/main.0be27370.js",
+    "main.css": "/frock/static/css/main.2b646001.css",
+    "main.js": "/frock/static/js/main.5851790e.js",
     "static/js/787.7431b45f.chunk.js": "/frock/static/js/787.7431b45f.chunk.js",
     "static/media/slider1_1.png": "/frock/static/media/slider1_1.20a096e71bc2256e3b79.png",
     "static/media/test3.jpg": "/frock/static/media/test3.6272fa4983c910eb42bb.jpg",
@@ -9,12 +9,12 @@
     "static/media/test1.jpg": "/frock/static/media/test1.1138067d79ef6d0476b0.jpg",
     "static/media/login_bg.jpg": "/frock/static/media/login_bg.e4f58eeddd92e823ba08.jpg",
     "index.html": "/frock/index.html",
-    "main.f1c1c679.css.map": "/frock/static/css/main.f1c1c679.css.map",
-    "main.0be27370.js.map": "/frock/static/js/main.0be27370.js.map",
+    "main.2b646001.css.map": "/frock/static/css/main.2b646001.css.map",
+    "main.5851790e.js.map": "/frock/static/js/main.5851790e.js.map",
     "787.7431b45f.chunk.js.map": "/frock/static/js/787.7431b45f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1c1c679.css",
-    "static/js/main.0be27370.js"
+    "static/css/main.2b646001.css",
+    "static/js/main.5851790e.js"
   ]
 }
