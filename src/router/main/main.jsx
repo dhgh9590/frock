@@ -36,7 +36,7 @@ const Main = (props) => {
                     </div>
                 </div>
             </section>
-            <Best best={props.best} bestData={props.bestData} setBest={props.setBest} visible={props.visible} setVisible={props.setVisible}></Best>
+            <Best best={props.best} bestData={props.bestData} setBest={props.setBest} visible={props.visible} setVisible={props.setVisible} loading={props.loading} setLoading={props.setLoading}></Best>
             <Latest></Latest>
         </div>
     );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addDetailData } from '../../store';
+import Loading from '../loading/loading';
 import styles from './best.module.css';
 
 
@@ -80,9 +81,12 @@ const Best = (props) => {
                     </ul>
                 </div>
                 {
+                    props.loading ? <Loading></Loading> : null
+                }
+                {
                     props.visible == 0 ?
                     <div className={styles.btt_wrap}>
-                        <button className={`${styles.more_btt} ${props.visible == 1 ? styles.visible : null}`} onClick={()=>{props.bestData(`https://dhgh9590.github.io/forck_json/main/best2.json`);props.setVisible(1)}}>View more</button>
+                        <button className={`${styles.more_btt} ${props.visible == 1 ? styles.visible : null}`} onClick={()=>{props.setLoading(true);props.bestData(`https://dhgh9590.github.io/forck_json/main/best2.json`);props.setVisible(1)}}>View more</button>
                     </div>
                     :null
                 }

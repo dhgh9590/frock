@@ -23,6 +23,7 @@ import Perfume from './router/perfume/perfume';
 function App() {
   let [best,setBest] = useState([]);//best상품 ajax요청한 값 담는 state
   let [visible,setVisible] = useState(0);//best상품 버튼 삭제 state
+  let [loading,setLoading] = useState(false) //로딩중 표시
   let dispatch = useDispatch();
   
 
@@ -33,6 +34,7 @@ function App() {
       .then(data => {
         setTimeout(()=>{
           let newBest = [...best,...data];
+          setLoading(false);
           setBest(newBest);
         },500)
       })
@@ -93,7 +95,7 @@ function App() {
     <div className="App">
       <Nav loginData={loginData} emailCheck={emailCheck} setEmailCheck={setEmailCheck} onLogin={onLogin}></Nav>
       <Routes>
-        <Route path="/" element={<Main best={best} bestData={bestData} setBest={setBest} visible={visible} setVisible={setVisible}></Main>}></Route>
+        <Route path="/" element={<Main best={best} bestData={bestData} setBest={setBest} visible={visible} setVisible={setVisible} loading={loading} setLoading={setLoading}></Main>}></Route>
         <Route path="/Costume" element={<Costume></Costume>}></Route>
         <Route path="/Shoes" element={<Shoes></Shoes>}></Route>
         <Route path="/Accessories" element={<Accessories></Accessories>}></Route>

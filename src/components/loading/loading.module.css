@@ -1,0 +1,72 @@
+.all {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    transform: scale(0.5);
+    filter: url('#goo'); /* <----------- add class */
+  }
+  .container, .loader {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: calc(50% - 200px); 
+    left: calc(50% - 200px);  
+    transform-origin: center;
+  }
+  .circle, .load_circle {
+    width: 80px;
+    height: 80px;  
+    position: absolute;
+    background-color: lightblue;
+    left: calc(50% - 40px);
+    border-radius: 50px;  
+  }
+  .container:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .container:nth-child(3) {
+    transform: rotate(90deg);
+  }
+  .container:nth-child(4) {
+    transform: rotate(135deg);
+  }
+  .container:nth-child(5) {
+    transform: rotate(180deg);
+  }
+  .container:nth-child(6) {
+    transform: rotate(225deg);
+  }
+  .container:nth-child(7) {
+    transform: rotate(270deg);
+  }
+  .container:nth-child(8) {
+    transform: rotate(315deg);
+  }
+  .loader {  
+    transform-origin: center;
+    animation: anim 5s infinite ease-in-out;
+  }
+  .load_circle {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+  }
+  @keyframes anim {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+  
+  #link {
+    bottom: 20px;
+    color: #000;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #link p {font-size: 20px; margin: 0; margin-left: 5px;}
+  #link:hover {opacity: 1;}
